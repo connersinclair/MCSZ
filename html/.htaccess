@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^servers/emailsuccess /servers.php?emailsuccess [NC]
+RewriteRule ^servers/([0-9]+) /servers.php?page=$1 [NC]
+RewriteRule ^vote/([0-9]+)/success /vote.php?serverid=$1&success=$2 [NC]
+RewriteRule ^vote/([0-9]+) /vote.php?serverid=$1 [NC]
+RewriteRule ^editserver/([0-9]+) /editserver.php?serverid=$1 [NC]
+RewriteRule ^search/([a-zA-Z0-9\s]+) /search.php?q=$1 [NC]
+RewriteRule ^search/ /search.php [NC]
+
+#Account modification codes
+#Specify action then modification value. Ex: Token to change password
+#/account/altpass/token = /account.php?action=altpass&fmod=token
+RewriteRule ^account/([a-z]+)/([a-zA-Z0-9]+) /account.php?action=$1&fmod=$2 [NC]
+RewriteRule ^account/([a-z]+) /account.php?action=$1 [NC]

@@ -1,0 +1,3 @@
+If there is a PHP file in the directory, KEEP IT AS PHP.
+
+If someone somehow finds it, it will not display our sensitive information.
